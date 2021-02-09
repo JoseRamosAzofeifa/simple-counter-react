@@ -7,9 +7,9 @@ import "bootstrap";
 
 //include your index.scss file into the bundle
 import "../styles/index.scss";
-
-//import your own components
 import { Home } from "./component/home.js";
-
-//render your react application
-ReactDOM.render(<Home />, document.querySelector("#app"));
+let counter = 0;
+setInterval(function() {
+	counter++;
+	ReactDOM.render(<Home time={counter} />, document.querySelector("#app"));
+}, 1000);
